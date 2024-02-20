@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Minify your URLs</h2>
+
+  <form action="/shortUrls" method="post">
+    <label for="OGUrl">Current Url</label>
+    <input type="url" name="OGUrl" id="OGUrl">
+    <button type="submit">Minifyy</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Original Url</th>
+        <th>Minified Url</th>
+        <th>No. of Clicks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% miniUrls.forEach(miniUrl => { %>
+        <tr>
+          <td>
+            <a href="<%=miniUrl.OGUrl%>">
+              <%=miniUrl.OGUrl%>
+            </a>
+          </td>
+          <td>
+            <a href="<%=miniUrl.miniUrl%>">
+              <%=miniUrl.miniUrl%>
+            </a>
+          </td>
+          <td><%=miniUrl.Count%></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+</body>
+</html>
