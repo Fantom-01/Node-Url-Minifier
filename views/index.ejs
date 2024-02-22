@@ -25,16 +25,8 @@
     <tbody>
       <% miniUrls.forEach(miniUrl => { %>
         <tr>
-          <td>
-            <a href="<%=miniUrl.OGUrl%>">
-              <%=miniUrl.OGUrl%>
-            </a>
-          </td>
-          <td>
-            <a href="<%=miniUrl.miniUrl%>">
-              <%=miniUrl.miniUrl%>
-            </a>
-          </td>
+          <td><a href="<%=miniUrl.OGUrl%>"><%=miniUrl.OGUrl%></a></td>
+          <td><a href="<%=miniUrl.miniUrl%>"><%=miniUrl.miniUrl%></a></td>
           <td><%=miniUrl.Count%></td>
         </tr>
       <% }); %>

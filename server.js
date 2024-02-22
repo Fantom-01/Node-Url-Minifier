@@ -21,8 +21,8 @@ app.post('/shortUrls', async (req, res) => {
   res.redirect('/');
 });
 
-app.get('/:shortUrl', async (req, res) => {
-  const MiniUrl = await miniUrl.findOne({ short: req.params.miniUrl});
+app.get('/:miniUrl', async (req, res) => {
+  const MiniUrl = await miniUrl.findOne({ miniUrl: req.params.miniUrl});
   if (MiniUrl == null) return res.sendStatus(404);
   MiniUrl.Count++
   MiniUrl.save();
